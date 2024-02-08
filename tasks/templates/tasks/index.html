@@ -12,6 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
+    <style>
+        a {color:inherit;}
+        li a {text-decoration:none;}
+    </style>
     <body>
         <h1>Django Todo List</h1>
 
@@ -32,9 +36,9 @@
                 <a href="{%url 'update_task' task.id%}">update task</a>
                 <a href="{%url 'delete_task' task.id%}">delete task</a>
                 {% if task.status == False %}
-                <li>{{task.title}}</li>
+                <li><a href="" title='{{task.description}}'>{{task.title}}</a></li>
                 {% else %}
-                <li><strike>{{task.title}}</strike></li>
+                <li><strike><a href="" title='{{task.description}}'>{{task.title}}</a></strike></li>
                 {% endif %}
                 completion status: {{task.status}} || created at :{{task.created_at}} || updated at :{{task.updated_at}}
                 <br>
