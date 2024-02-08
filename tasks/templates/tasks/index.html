@@ -13,6 +13,7 @@
     <ul>
     {%for task in tasks%}
         <a href="{%url 'update_task' task.id%}">update task</a>
+        <a href="{%url 'delete_task' task.id%}">delete task</a>
         <li>{{task.title}} || completion status: {{task.status}}|| {{task.created_at}}</li>
     {% endfor %}
     </ul>

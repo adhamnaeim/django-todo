@@ -1,0 +1,12 @@
+<h3>are you sure you want to delete "{{task.title}}"?</h3>
+<div>
+    <p>task was created at {{task.created_at}}</p>
+    <p>task completion status is {{task.status}}</p>
+</div>
+
+<a href="{% url 'task_list' %}" >Cancel</a>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="confirm">
+</form>
