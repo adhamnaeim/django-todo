@@ -1,9 +1,18 @@
 <h1>Hello world!</h1>
 
 <div>
+    <form action="/" method="post"> 
+        {% csrf_token %}
+        {{form.title}} 
+        <input type="submit" value="create a task!">
+    </form>
+    
+</div>
+
+<div>
     <ul>
     {%for task in tasks%}
-        <li>{{task}}</li>
+        <li>{{task.title}} || completion status: {{task.status}}|| {{task.created_at}}</li>
     {% endfor %}
     </ul>
 </div>
