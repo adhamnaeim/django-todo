@@ -12,9 +12,18 @@
 <div>
     <ul>
     {%for task in tasks%}
+    <div>
+        <br>
         <a href="{%url 'update_task' task.id%}">update task</a>
         <a href="{%url 'delete_task' task.id%}">delete task</a>
-        <li>{{task.title}} || completion status: {{task.status}}|| {{task.created_at}}</li>
+        {% if task.status == False %}
+        <li>{{task.title}}</li>
+        {% else %}
+        <li><strike>{{task.title}}</strike></li>
+        {% endif %}
+        completion status: {{task.status}}|| {{task.created_at}}
+        <br>
+    </div>
     {% endfor %}
     </ul>
 </div>
