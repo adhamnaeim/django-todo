@@ -21,7 +21,7 @@
         {% else %}
         <li><strike>{{task.title}}</strike></li>
         {% endif %}
-        completion status: {{task.status}}|| {{task.created_at}}
+        completion status: {{task.status}} || created at :{{task.created_at}} || updated at :{{task.updated_at}}
         <br>
     </div>
     {% endfor %}
